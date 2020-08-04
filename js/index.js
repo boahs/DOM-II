@@ -1,4 +1,4 @@
-//one wheel event on .img-content image [Bubbles = true]
+//one -  wheel event on .img-content image [Bubbles = true]
 
 const imgWheel = document.querySelector(".img-content img");
 
@@ -18,7 +18,7 @@ function zoom(event) {
 
 imgWheel.addEventListener("wheel", zoom);
 
-//two mouseover event on header 2 [Bubbles = true]
+//two -  mouseover event on header 2 [Bubbles = true]
 
 const changeHeadColor = document.querySelector("h2");
 
@@ -50,9 +50,18 @@ changeHeadColor.addEventListener(
   false
 );
 
-// load event [bubbles = FALSE]
+//three -  load event [bubbles = FALSE]
 
 window.addEventListener("load", (event) => {
   //when we load our page we'll log our console with the following message below.
   console.log(`We've loaded the page successfully`);
+});
+
+// four - copy event [bubbles = TRUE]
+const textCopy = document.querySelector(".intro h2"); //grabbing the intro class h2
+
+textCopy.addEventListener("copy", (event) => {
+  const selection = document.getSelection(); //getSelection() will return the text selected by the user
+  event.clipboardData.setData("text/plain", selection.toString().toUpperCase()); // we're taking our selection variable and morphing it into a string to use t he .toUpperCase() method
+  event.preventDefault(); // preventing the default copy so we can use the methods above ^ (?)
 });
