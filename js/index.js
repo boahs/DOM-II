@@ -59,3 +59,11 @@ document.addEventListener("keydown", (event) => {
     window.alert("Page is being refreshed");
   }
 });
+
+//six - mousemove event - [bubbles = TRUE]
+
+const mouseMoveEvent = document.querySelector(".text-content h2");
+
+mouseMoveEvent.addEventListener("mousemove", (event) => {
+  event.target.style.color = "red";
+});
