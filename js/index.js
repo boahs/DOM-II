@@ -36,20 +36,6 @@ changeHeadColor.addEventListener(
   false
 );
 
-changeHeadColor.addEventListener(
-  "mouseover",
-  function (event) {
-    // highlight the mouseover target
-    event.target.style.color = "orange";
-
-    // reset the color after a short delay
-    setTimeout(function () {
-      event.target.style.color = "";
-    }, 500);
-  },
-  false
-);
-
 //three -  load event [bubbles = FALSE]
 
 window.addEventListener("load", (event) => {
@@ -64,4 +50,12 @@ textCopy.addEventListener("copy", (event) => {
   const selection = document.getSelection(); //getSelection() will return the text selected by the user
   event.clipboardData.setData("text/plain", selection.toString().toUpperCase()); // we're taking our selection variable and morphing it into a string to use t he .toUpperCase() method
   event.preventDefault(); // preventing the default copy so we can use the methods above ^ (?)
+});
+
+//five - mousedown event - [bubbles = TRUE]
+document.addEventListener("keydown", (event) => {
+  if (event.keyCode === 116) {
+    // 116 is the keycode for F5
+    window.alert("Page is being refreshed");
+  }
 });
