@@ -52,7 +52,7 @@ textCopy.addEventListener("copy", (event) => {
   event.preventDefault(); // preventing the default copy so we can use the methods above ^ (?)
 });
 
-//five - mousedown event - [bubbles = TRUE]
+//five - keydown event - [bubbles = TRUE]
 document.addEventListener("keydown", (event) => {
   if (event.keyCode === 116) {
     // 116 is the keycode for F5
@@ -66,4 +66,12 @@ const mouseMoveEvent = document.querySelector(".text-content h2");
 
 mouseMoveEvent.addEventListener("mousemove", (event) => {
   event.target.style.color = "red";
+});
+
+//seven - dblclick event - [bubbles = TRUE]
+
+const btnDouble = document.querySelector(".destination .btn");
+
+btnDouble.addEventListener("dblclick", function (event) {
+  window.prompt("Enter a username");
 });
