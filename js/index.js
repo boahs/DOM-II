@@ -82,3 +82,19 @@ const noContext = document.querySelector(".intro p");
 noContext.addEventListener("contextmenu", (event) => {
   event.preventDefault();
 });
+
+//nine - mouseleave event - [bubble = FALSE]
+
+const mouseLeave = document.querySelector(".destination h4");
+
+mouseLeave.addEventListener("mouseleave", (event) => {
+  mouseLeave.style.border = "2px solid red";
+});
+
+//ten - mouseenter event - [bubble = FALSE]
+
+const focusFooter = document.querySelector(".footer p");
+
+focusFooter.addEventListener("mouseenter", (event) => {
+  focusFooter.style.border = "8px solid green";
+});
