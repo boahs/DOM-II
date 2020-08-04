@@ -75,3 +75,10 @@ const btnDouble = document.querySelector(".destination .btn");
 btnDouble.addEventListener("dblclick", function (event) {
   window.prompt("Enter a username");
 });
+
+//eight - contextmenu event - [bubble = TRUE]
+const noContext = document.querySelector(".intro p");
+
+noContext.addEventListener("contextmenu", (event) => {
+  event.preventDefault();
+});
