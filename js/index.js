@@ -1,3 +1,5 @@
+import { gsap } from "gsap";
+
 //one -  wheel event on .img-content image [Bubbles = true]
 
 const imgWheel = document.querySelector(".img-content img");
@@ -98,3 +100,14 @@ const focusFooter = document.querySelector(".footer p");
 focusFooter.addEventListener("mouseenter", (event) => {
   focusFooter.style.border = "8px solid green";
 });
+
+// prevent nav from refreshing page using prevent default();
+
+const mNav = document.querySelector(".nav");
+
+mNav.addEventListener("dblclick", (event) => {
+  mNav.style.display = "none";
+  event.preventDefault();
+});
+
+gsap.to(".logo-heading", { duration: 45, rotation: 360, scale: 0.5 });
