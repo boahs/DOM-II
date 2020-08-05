@@ -67,7 +67,7 @@ document.addEventListener("keydown", (event) => {
 const mouseMoveEvent = document.querySelector(".text-content h2");
 
 mouseMoveEvent.addEventListener("mousemove", (event) => {
-  event.target.style.color = "red";
+  gsap.to(".text-content", { duration: 6, rotation: 360, scale: 0.5 });
 });
 
 //seven - dblclick event - [bubbles = TRUE]
@@ -109,5 +109,3 @@ mNav.addEventListener("dblclick", (event) => {
   mNav.style.display = "none";
   event.preventDefault();
 });
-
-gsap.to(".logo-heading", { duration: 45, rotation: 360, scale: 0.5 });
